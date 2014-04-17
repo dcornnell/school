@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Professors</title>
+	
+</head>
+<body>
+
+
+<h1>Professors</h1>
+
+<ul>
+<% @professors.each do |professor| %>
+<li><%= professor.name %>
+<% end %>
+</ul>
+
+<a href="/professors/new"><button id="add">add professor</button></a>
+
+<form action="/professors/search" method="post" id="search">
+	<input type="text" id="search" name="search">
+	<input type="submit" >
+</form>
+
+<a href="../main">back</a>
+
+
+</body>
+</html>

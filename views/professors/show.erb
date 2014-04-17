@@ -1,0 +1,21 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<%= @professor.name %><br>
+
+
+<form action="/professors/<%=@professor.id %>/delete" method="post">
+	<input type="hidden" name="_method" value="delete" />
+	<br>
+	<input type="submit" value="Delete" />
+	</form>
+
+	
+
+
+
+</body>
+</html>
