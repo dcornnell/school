@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>courses</title>
+	<title>Courses</title>
 	
 </head>
 <body>
 
 
-<h1>courses</h1>
+<h1>Courses</h1>
 
 <ul>
 <% @courses.each do |course| %>
-<li><%= course.name %>
+<li><%= course.name %>&nbsp;&nbsp;<%= course.start_date.strftime("%b %d, %Y") %>
 <% end %>
 </ul>
 

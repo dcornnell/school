@@ -3,6 +3,14 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:///sql_hw.db"
 
+get '/main' do
+	@subjects =Subject.all
+	@courses =Course.all
+	@professors =Professor.all
+	erb :"/main"
+end
+
+
 get '/professors' do
 	@professors = Professor.all
 	erb :"professors/index"

@@ -1,0 +1,45 @@
+<Html>
+<head>
+<link rel="stylesheet" type="text/css" href="../public/application.css">
+</head>
+<body>
+
+<ol>
+	<li><a href="/subjects">Subjects</a>
+		<ol>
+<% @subjects.each do |subject| %>
+<li>
+	<%= subject.name %>
+	<a href="subjects/<%= subject.id %>">delete</a>
+	<a href="subjects/<%= subject.id %>/edit">edit</a>
+</li>
+<% end %>
+</ol>
+</li>
+<br>
+<li><a href="/courses">Courses</a>
+	<ol>
+		<% @courses.each do |course| %>
+		<li>
+			<%= course.name %>
+			<a href="courses/<%= course.id %>">delete</a>
+			<a href="courses/<%= course.id %>/edit">edit</a>
+		</li>
+		<% end %>
+	</ol>
+</li>
+<br>
+	<li><a href="/professors">Professors</a>
+		<ol>
+<% @professors.each do |professor| %>
+<li>
+	<%= professor.name %>
+	<a href="professors/<%= professor.id %>">delete</a>
+	<a href="professors/<%= professor.id %>/edit">edit</a>
+</li>
+<% end %>
+</ol>
+</li>
+
+</body>
+</Html>
