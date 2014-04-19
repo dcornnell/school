@@ -4,10 +4,10 @@
 </head>
 <body>
 
-<%= @professor.name %><br>
+<%= @subject.name %><br>
 
 
-<form action="/professors/<%=@professor.id %>/delete" method="post">
+<form action="/subjects/<%=@subject.id %>/delete" method="post">
 	<input type="hidden" name="_method" value="delete" />
 	<br>
 	<input type="submit" value="Delete" />

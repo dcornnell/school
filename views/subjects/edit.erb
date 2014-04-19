@@ -1,10 +1,10 @@
 Do you want to change? 
 
-<form action="/professors/<%= @professor.id %>" method="post" id="edit">
+<form action="/subjects/<%= @subject.id %>" method="post" id="edit">
 			<input type="hidden" name="_method" value="put" />
  
     
-    	<input type="text"  id="name" name="professor[name]" value="<%= @professor.name %>" / ><br>
+    	<input type="text"  id="name" name="subject[name]" value="<%= @subject.name %>" / ><br>
     	<br>
     
     	<input type="submit" value="Change!" /><br><br>

@@ -9,9 +9,37 @@
 	
 
 	<form action="/courses" method="post">
-		Name:<br>
+		Course name:<br>
 		<input type="text"  id="name" name="course[name]"><br>
-		
+	<br>Professor:<br>
+		<select name="professor">
+			<% @professors.each do |professor| %>
+			<option value="<%= professor.id %>"><%= professor.name %></option>
+			<% end %>
+		</select>
+
+		<br>Subject:<br>
+		<select name="subject">
+			<% @subjects.each do |subject| %>
+			<option value="<%= subject.id %>"><%= subject.name %></option>
+			<% end %>
+		</select>
+
+	
+
+		<br>Start Date:<br>
+		<input type="text"  id="start-date" name="course[start_date]"><br>
+
+
+
+
+
+
+
+				
+				
+			
+
 		<br>
 		<input type="submit" value="add!">
 	</form>

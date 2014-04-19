@@ -86,20 +86,32 @@ put '/subjects/:id' do
 end
 
 get '/courses' do
+	
 	@courses = Course.all
 	erb :"courses/index"
 end
 
 get '/courses/new' do
+	@professors = Professor.all
+	@subjects = Subject.all
 	erb :"courses/new"
 end
 
 post '/courses' do
 	@course = Course.new(params[:course])
-	@course.save
+	@professor_record = Professor.find(params[:professor])
+	@professor_number = @professor_record.id
+	@course.professor_id = @professor_number
+
+	@subject_record = Subject.find(params[:subject])
+	@subject_number = @subject_record.id
+	@course.subject_id = @subject_number
+	
+
 	if @course.name =="" 
 		redirect :'courses/new'
 	else
+		@course.save
 		redirect :"courses"
 	end
 end
@@ -125,6 +137,9 @@ put '/courses/:id' do
 	@course.update_attributes(params[:course])
 	redirect :"/courses"
 end
+
+
+
 
 class Professor <ActiveRecord::Base
 end
