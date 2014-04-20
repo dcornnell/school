@@ -1,28 +1,39 @@
 <!DOCTYPE html>
+<meta charset=”utf-8”> 
 <html>
 <head>
-	<title>Professors</title>
-	
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
 
-
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="main" class = "navbar-brand">School</a>
+      </div>
+      <ul class = " nav navbar-nav navbar-right">
+            <li><a href="subjects">Subjects</a></li>
+             <li><a href="courses">Courses</a></li>
+              <li><a href="professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
 <h1>Professors</h1>
 
-<ul>
+<table class="table table-striped">
 <% @professors.each do |professor| %>
-<li><%= professor.name %>
+<tr><td><%= professor.name %></td></tr>
 <% end %>
-</ul>
+</table>
 
-<a href="/professors/new"><button id="add">add professor</button></a>
+<a href="/professors/new"><button id="add" class="btn btn-default">add professor</button></a>
 
-<form action="/professors/search" method="post" id="search">
-	<input type="text" id="search" name="search">
-	<input type="submit" >
-</form>
 
-<a href="../main">back</a>
 
 
 </body>

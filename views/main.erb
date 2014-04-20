@@ -1,45 +1,67 @@
-<Html>
+<!DOCTYPE html>
+<meta charset=”utf-8”> 
+<html>
 <head>
-<link rel="stylesheet" type="text/css" href="../public/application.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
 
-<ol>
-	<li><a href="/subjects">Subjects</a>
-		<ol>
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="main" class = "navbar-brand">School</a>
+      </div>
+      <ul class ="nav navbar-nav navbar-right">
+            <li><a href="subjects">Subjects</a></li>
+             <li><a href="courses">Courses</a></li>
+              <li><a href="professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
+<div class="col-md-4">
+	<a href="/subjects"><h1>Subjects</h1></a>
+		<table class="table table-striped">
 <% @subjects.each do |subject| %>
-<li>
-	<%= subject.name %>
-	<a href="subjects/<%= subject.id %>">delete</a>
-	<a href="subjects/<%= subject.id %>/edit">edit</a>
-</li>
+<tr>
+	<td><%= subject.name %></td>
+	<td><a href="subjects/<%= subject.id %>/edit">edit</a></td>
+	<td><a href="subjects/<%= subject.id %>">delete</a></td>
+	
+</tr>
 <% end %>
-</ol>
-</li>
-<br>
-<li><a href="/courses">Courses</a>
-	<ol>
+</table>
+</div>
+<div class="col-md-4">
+	<a href="/courses"><h1>Courses</h1></a>
+	<table class="table table-striped">
 		<% @courses.each do |course| %>
-		<li>
-			<%= course.name %>
-			<a href="courses/<%= course.id %>">delete</a>
-			<a href="courses/<%= course.id %>/edit">edit</a>
-		</li>
+		<tr>
+		<td>	<%= course.name %></td>
+		<td>	<a href="courses/<%= course.id %>/edit">edit</a></td>
+		<td>	<a href="courses/<%= course.id %>">delete</a></td>
+		
+		</tr>
 		<% end %>
-	</ol>
-</li>
-<br>
-	<li><a href="/professors">Professors</a>
-		<ol>
+	</table>
+</div>
+<div class="col-md-4">
+	<a href="/professors"><h1>Professors</h1></a>
+		<table class="table table-striped">
 <% @professors.each do |professor| %>
-<li>
-	<%= professor.name %>
-	<a href="professors/<%= professor.id %>">delete</a>
-	<a href="professors/<%= professor.id %>/edit">edit</a>
-</li>
+<tr>
+<td>	<%= professor.name %></td>
+<td>	<a href="professors/<%= professor.id %>/edit">edit</a></a></td>
+<td>	<a href="professors/<%= professor.id %>">delete</a></td>
+	
+</tr>
 <% end %>
-</ol>
-</li>
-
+</table>
+</div>
+</div>
 </body>
-</Html>
+</html>

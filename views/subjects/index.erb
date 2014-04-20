@@ -1,29 +1,44 @@
 <!DOCTYPE html>
+<meta charset=”utf-8”> 
 <html>
 <head>
-	<title>subjects</title>
-	
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
 
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="main" class = "navbar-brand">School</a>
+      </div>
+      <ul class = " nav navbar-nav navbar-right">
+            <li><a href="subjects">Subjects</a></li>
+             <li><a href="courses">Courses</a></li>
+              <li><a href="professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
+<h1>Subjects</h1>
 
-<h1>subjects</h1>
+<table class="table table-striped">
 
-<ul>
 <% @subjects.each do |subject| %>
-<li><%= subject.name %>
+<tr><td><%= subject.name %></td></tr>
 <% end %>
-</ul>
 
-<a href="/subjects/new"><button id="add">add subject</button></a>
+</table>
 
-<form action="/subjects/search" method="post" id="search">
-	<input type="text" id="search" name="search">
-	<input type="submit" >
-</form>
+<a href="/subjects/new"><button class="btn btn-default"id="add">add subject</button></a>
 
-<a href="../main">back</a>
 
+
+
+</div>
 
 </body>
 </html>

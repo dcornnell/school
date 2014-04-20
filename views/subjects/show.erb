@@ -1,16 +1,35 @@
+<!DOCTYPE html>
+<meta charset=”utf-8”> 
 <html>
 <head>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
 
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="../main" class = "navbar-brand">School</a>
+      </div>
+      <ul class = " nav navbar-nav navbar-right">
+            <li><a href="../subjects">Subjects</a></li>
+             <li><a href="../courses">Courses</a></li>
+              <li><a href="../professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
 <%= @subject.name %><br>
 
 
 <form action="/subjects/<%=@subject.id %>/delete" method="post">
 	<input type="hidden" name="_method" value="delete" />
 	<br>
-	<input type="submit" value="Delete" />
+	<button type="submit" class="btn btn-danger" />Delete</button>
 	</form>
 
 	

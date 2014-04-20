@@ -1,13 +1,41 @@
+
+
+<!DOCTYPE html>
+<meta charset=”utf-8”> 
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
+</head>
+<body>
+
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="../../main" class = "navbar-brand">School</a>
+      </div>
+      <ul class = " nav navbar-nav navbar-right">
+            <li><a href="../../subjects">Subjects</a></li>
+             <li><a href="../../courses">Courses</a></li>
+              <li><a href="../../professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
+
 Do you want to change? 
 
 <form action="/courses/<%= @course.id %>" method="post" id="edit">
 			<input type="hidden" name="_method" value="put" />
  
     
-    	<input type="text"  id="name" name="course[name]" value="<%= @course.name %>" / ><br>
+    	<input type="text"  id="name" name="course[name]" value="<%= @course.name %>" / ><br><br>
     	<input type="text"  id="name" name="course[start_date]" value="<%= @course.start_date.strftime("%b %d, %Y") %>" / ><br>
     	
     	<br>
     
-    	<input type="submit" value="Change!" /><br><br>
+    	<button type="submit" class="btn btn-default" />Edit</button><br><br>
    </form>

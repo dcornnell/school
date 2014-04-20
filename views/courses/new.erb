@@ -1,24 +1,45 @@
 <!DOCTYPE html>
+<meta charset=”utf-8”> 
 <html>
 <head>
-	<title>Add a course</title>
-	
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
+
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="main" class = "navbar-brand">School</a>
+      </div>
+      <ul class = " nav navbar-nav navbar-right">
+            <li><a href="subjects">Subjects</a></li>
+             <li><a href="courses">Courses</a></li>
+              <li><a href="professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
 <h1>Add a course</h1>
 	
 
-	<form action="/courses" method="post">
-		Course name:<br>
-		<input type="text"  id="name" name="course[name]"><br>
-	<br>Professor:<br>
+	<form class="form-horizontal" action="/courses" method="post">
+		Course name:&nbsp;
+		<input type="text"  id="name" name="course[name]"><br><br>
+		Start Date:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="date"  id="start-date" name="course[start_date]"><br><br>
+
+	Professor:
 		<select name="professor">
 			<% @professors.each do |professor| %>
 			<option value="<%= professor.id %>"><%= professor.name %></option>
 			<% end %>
 		</select>
 
-		<br>Subject:<br>
+		&nbsp;&nbsp;Subject:
 		<select name="subject">
 			<% @subjects.each do |subject| %>
 			<option value="<%= subject.id %>"><%= subject.name %></option>
@@ -27,8 +48,7 @@
 
 	
 
-		<br>Start Date:<br>
-		<input type="text"  id="start-date" name="course[start_date]"><br>
+
 
 
 
@@ -41,7 +61,7 @@
 			
 
 		<br>
-		<input type="submit" value="add!">
+		<button class="btn btn-default" type="submit" >Add</button>
 	</form>
 	<br>
 

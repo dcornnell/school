@@ -1,28 +1,42 @@
 <!DOCTYPE html>
+<meta charset=”utf-8”> 
 <html>
 <head>
-	<title>Courses</title>
-	
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
 </head>
 <body>
 
+<div class ="navbar navbar-inverse navbar-static-top">
+<div class="container">
+      <div class=".navbar-header">
+      <a href="main" class = "navbar-brand">School</a>
+      </div>
+      <ul class = " nav navbar-nav navbar-right">
+            <li><a href="subjects">Subjects</a></li>
+             <li><a href="courses">Courses</a></li>
+              <li><a href="professors">Professors</a></li>
+          </ul>
+      </div>
+      
+</div>
+<div class="container">
 
 <h1>Courses</h1>
 
-<ul>
+<table class="table table-striped">
+<tr><td><b>Course Name</b></td><td><b>Starting Date</b></td></tr>
 <% @courses.each do |course| %>
-<li><%= course.name %>&nbsp;&nbsp;<%= course.start_date.strftime("%b %d, %Y") %>
+<tr><td><a href="courses/<%= course.id %>"><%= course.name %></a></td><td><%= course.start_date.strftime("%b %d, %Y") %></td></tr>
 <% end %>
-</ul>
+</table>
 
-<a href="/courses/new"><button id="add">add course</button></a>
+<a href="/courses/new"><button class="btn btn-default" id="add">add course</button></a>
+<br>
+<br>
 
-<form action="/courses/search" method="post" id="search">
-	<input type="text" id="search" name="search">
-	<input type="submit" >
-</form>
-
-<a href="../main">back</a>
 
 
 </body>
